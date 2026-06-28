@@ -1,0 +1,16 @@
+class Solution {
+    public boolean isPerfect(int n) {
+        int copy=n;
+        int count=0;
+        for(int i=1;i<n;i++){
+            if(n%i==0){
+                count+=i;
+            }
+        }
+        if(copy==count){
+            return true;
+        }else{
+            return false;
+        }
+    }
+}
