@@ -1,0 +1,30 @@
+class Solution {
+    int min=0;
+    public int min(int ans,int val){
+            if(val<ans){
+                min=val;
+            }
+            return min;
+        }
+    public int findMin(int[] nums) {
+        int low=0;
+        int high=nums.length-1;
+        int ans=Integer.MAX_VALUE;
+     
+        
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(nums[low]<=nums[mid]){
+                ans=min(ans,nums[low]);
+                low=mid+1;
+            }else{
+             ans=min(ans,nums[mid]);
+             high=mid-1;
+            }
+
+
+        }
+        return ans;
+        
+    }
+}
